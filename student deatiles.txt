@@ -1,0 +1,28 @@
+#include <stdio.h>
+struct Address {
+    char city[50];
+    int doorno;
+};
+ struct Student {
+    int id;
+    char name[50];
+    struct Address addr;
+};
+int main() {
+    struct Student s;          
+    struct Student *ptr = &s;  
+    printf("Enter Student ID: ");
+    scanf("%d", &ptr->id);
+    printf("Enter Student Name: ");
+    scanf(" %[^\n]", ptr->name);   
+    printf("Enter City: ");
+    scanf(" %[^\n]", ptr->addr.city);
+    printf("Enter doorno: ");
+    scanf("%d", &ptr->addr.doorno);
+    printf("\n Student Details \n");
+    printf("Student ID   : %d\n", ptr->id);
+    printf("Student Name : %s\n", ptr->name);
+    printf("City         : %s\n", ptr->addr.city);
+    printf("doorno       : %d\n", ptr->addr.doorno);
+    return 0;
+}
