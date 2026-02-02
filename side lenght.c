@@ -1,0 +1,10 @@
+#include <stdio.h>
+#include <math.h>
+int main() {
+    float area;
+    printf("Enter the area : \n");
+    scanf("%f", &area);
+    int side_length = sqrt(area);
+    printf("\nThe side length : %d\n", side_length);
+    return 0;
+}

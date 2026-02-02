@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+struct as{
+    long int number;
+    struct as*manoj;
+};
+int main()
+{
+     struct as *rollno1=(struct as*)malloc(sizeof(struct as));
+     struct as *rollno2=(struct as*)malloc(sizeof(struct as));
+    struct as *rollno3=(struct as*)malloc(sizeof(struct as));
+     printf("Enter The 1st Number: ");
+     scanf("%ld",&rollno1->number);
+     printf("Enter The 2nd Number :");
+     scanf("%ld",&rollno2->number);
+     printf("Enter The 3rd Number :");
+     scanf("%ld",&rollno3->number);
+     rollno1->manoj=rollno2;
+     rollno2->manoj=rollno3;
+     rollno3->manoj=NULL;
+     struct as *head=rollno1;
+     while(head!=0){
+         printf("Roll %ld-->",head->number);
+         head=head->manoj;
+     }
+     printf("NULL");
+     return 0;
+     
+     }
